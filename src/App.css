@@ -1,6 +1,9 @@
 body{
-  background: #d9bbb0;
-  color: white;
+  background: linear-gradient(to right, #f1f2b5, #135058);
+  color: black;
+    margin: 0;
+    height: 100vh;
+    
 
 
 }

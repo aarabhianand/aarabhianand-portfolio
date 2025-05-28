@@ -1,0 +1,265 @@
+    li:nth-child(1) .text{
+    background-color: #345c32;
+    z-index: 12;
+}
+    li:nth-child(2) .text {
+        background-color: #9CAC54;
+        z-index: 11;
+    }
+
+    li:nth-child(3) .text {
+        background-color: #A7F0DD;
+        z-index: 10;
+    }
+    li:nth-child(4) .text {
+        background-color: #97CD97;
+        z-index: 9;
+    }
+    li:nth-child(5) .text {
+        background-color: #345c32;
+        z-index: 8;
+    }
+    li:nth-child(6) .text {
+        background-color: #9CAC54;
+        z-index: 7;
+    }
+    li:nth-child(7) .text {
+        background-color: #A7F0DD;
+        z-index: 6;
+    }
+    li:nth-child(8) .text {
+        background-color: #97CD97;
+        z-index:5;
+    }
+    li:nth-child(9) .text {
+        background-color: #345c32;
+        z-index:4;
+    }
+    li:nth-child(10) .text {
+        background-color: #9CAC54;
+        z-index: 3;
+    }
+    li:nth-child(11) .text {
+        background-color: #A7F0DD;
+        z-index:2
+    }
+    li:nth-child(12) .text {
+        background-color: #97CD97;
+        z-index:1;
+    }
+    li:first-child {
+        transform: rotate(0deg) skewY(-60deg);
+    }
+    li:nth-child(2) {
+        transform: rotate(30deg) skewY(-60deg);
+    }
+    li:nth-child(3) {
+        transform: rotate(60deg) skewY(-60deg);
+    }
+    li:nth-child(4) {
+        transform: rotate(90deg) skewY(-60deg);
+    }
+    li:nth-child(5) {
+        transform: rotate(120deg) skewY(-60deg);
+    }
+    li:nth-child(6) {
+        transform: rotate(150deg) skewY(-60deg);
+    }
+    li:nth-child(7) {
+        transform: rotate(180deg) skewY(-60deg);
+    }
+    li:nth-child(8) {
+        transform: rotate(210deg) skewY(-60deg);
+    }
+    li:nth-child(9) {
+        transform: rotate(240deg) skewY(-60deg);
+    }
+    li:nth-child(10) {
+        transform: rotate(270deg) skewY(-60deg);
+    }
+    li:nth-child(11) {
+        transform: rotate(300deg) skewY(-60deg);
+    }
+    li:nth-child(12) {
+        transform: rotate(330deg) skewY(-60deg);
+    }
+    .circle
+    {
+        width:25em;
+        height:25em;
+        border: 8px solid beige;
+        position: relative;
+        padding: 0;
+        margin: 1em auto;
+        border-radius: 50%;
+        list-style: none;
+        overflow: hidden;
+
+
+    }
+    li {
+        overflow:hidden;
+        position: absolute;
+        top: 0;
+        right: 0;
+        width:50%;
+        height: 50%;
+        transform-origin: 0% 100%;
+        
+        
+        
+
+    }
+    .text{
+        position: absolute;
+        left: -100%;
+        width: 200%;
+        height: 200%;
+        text-align: center;
+        display: block;
+        color:white;
+        transform: skewY(60deg) rotate(15deg);
+        padding-top: 20px;
+        cursor: pointer;
+        font-weight: bold;
+        font-size:18px;
+        font-family: 'Cinzel', serif;
+
+
+
+    }
+    .arrow{
+        width:0;
+        height:0;
+        border-left: 30px solid transparent;
+        border-right: 30px solid transparent;
+        border-top: 60px solid beige;
+        position: absolute;
+        left: 50%;
+        top: -20px;
+        z-index:1;
+
+    }
+    .spin-button {
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        width: 40px;
+        height: 40px;
+        background-color: beige;
+        border-radius: 40px;
+        border: 1px beige solid;
+        cursor: pointer;
+        color: white;
+        outline:none;
+        font-size: 18px;
+        z-index: 20;
+      }
+      
+      .start-rotate {
+        animation: spin-to-first 2.5s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+      }
+      
+      
+      @keyframes spin-to-first {
+        0% {
+          transform: rotate(0deg);
+        }
+        100% {
+          transform: rotate(1800deg); /* 10 full spins */
+        }
+      }
+      
+    .stop-rotate
+    {
+        animation-play-state: paused;
+    }
+
+    .separator {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 8px;
+        height: 100%;
+        background: beige;
+        z-index: 13;
+      }
+
+      .fade-message {
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        border: 2px solid black;
+        padding-left: 50px;
+        padding-right: 50px;
+        padding-top: 50px;
+        padding-bottom:50px;
+        background: beige;
+        color: black;
+        font-size: 2rem;
+        font-weight: italic;
+        opacity: 30;
+        align-content: center;
+        z-index: 100;
+        letter-spacing: 1px;
+        white-space: nowrap;
+        
+        font-family: 'Lora', serif;
+      }
+      
+      @keyframes fadeIn {
+        0% {
+          opacity: 0;
+          transform: translate(-50%, -50%) scale(0.9);
+        }
+        100% {
+          opacity: 1;
+          transform: translate(-50%, -50%) scale(1);
+        }
+      }
+
+      .spinner-wrapper {
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+      }
+
+      /* Make sure the confetti canvas is positioned on top and visible */
+canvas {
+    position: fixed;
+    pointer-events: none;  
+    top: 0;
+    left: 0;
+    width: 100vw ;
+    height: 100vh ;
+    z-index: 9999;         
+  }
+
+  @keyframes pageZoomIn {
+    0% {
+      transform: scale(1);
+      opacity: 1;
+    }
+    100% {
+      transform: scale(0);
+      opacity: 0;
+    }
+  }
+  
+  .page-zoom-in {
+    animation: pageZoomIn 2s ease-in forwards;
+  }
+  
+  
+  
+      
+      
+
+      
+      
+    
+
+
