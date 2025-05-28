@@ -28,7 +28,7 @@ class Spinner extends React.Component {
 
       confetti({
         ...defaults,
-        particleCount: 3,
+        particleCount: 15,
         angle: 60,
         origin: { x: 0 },
         colors: colors
@@ -36,7 +36,7 @@ class Spinner extends React.Component {
 
       confetti({
         ...defaults,
-        particleCount: 3,
+        particleCount: 15,
         angle: 120,
         origin: { x: 1 },
         colors: colors
@@ -88,10 +88,10 @@ class Spinner extends React.Component {
       // New: Trigger reveal page after delay
       setTimeout(() => {
         if (this.audioRef.current) {
-          this.fadeAudio(this.audioRef.current, this.audioRef.current.volume, 0, 5000);
+          this.fadeAudio(this.audioRef.current, this.audioRef.current.volume, 0, 4500);
           setTimeout(() => {
             this.setState({ showRevealPage: true });
-          }, 5000); // wait for fade out duration before showing reveal page
+          }, 4500); // wait for fade out duration before showing reveal page
         } else {
           this.setState({ showRevealPage: true });
         }
@@ -136,7 +136,7 @@ class Spinner extends React.Component {
                 key={i}
                 initial={{ opacity: 0, y: 10 }}
                 animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 3.0, delay: i * 0.30 }}
+                transition={{ duration: 3.0, delay: i * 0.60 }}
                 style={{ display: "inline-block", marginRight: "6px" }}
               >
                 {word}
