@@ -2,19 +2,23 @@ import React from 'react';
 import './spinner.css';
 import confetti from 'canvas-confetti';
 import { motion } from 'framer-motion';
+import SkewedScroll from './SkewSroll';
+import logo from './logo.png';
 
 class Spinner extends React.Component {
   state = {
     name: "circle",
     showMessage: false,
-    showRevealPage: false
+    showRevealPage: false,
+    showCircle: true,
+    fadingOut: false
   };
 
   audioRef = React.createRef();
 
   startFireworks = (duration = 15000) => {
     const animationEnd = Date.now() + duration;
-    const colors = ['#CB9606', '#9CAC54', '#A7FODD', '#97CD97'];
+    const colors = [   '#9CAC54','#97CD97','#345C32'];
     const defaults = {
       startVelocity: 30,
       spread: 55,
@@ -28,7 +32,7 @@ class Spinner extends React.Component {
 
       confetti({
         ...defaults,
-        particleCount: 15,
+        particleCount: 30,
         angle: 60,
         origin: { x: 0 },
         colors: colors
@@ -36,7 +40,7 @@ class Spinner extends React.Component {
 
       confetti({
         ...defaults,
-        particleCount: 15,
+        particleCount: 30,
         angle: 120,
         origin: { x: 1 },
         colors: colors
@@ -73,7 +77,7 @@ class Spinner extends React.Component {
     this.setState({ name: "circle start-rotate" });
 
     setTimeout(() => {
-      this.setState({ name: "circle" });
+      this.setState({ name: "circle", fadingOut: true });  // trigger fade out
 
       if (this.audioRef.current) {
         const audio = this.audioRef.current;
@@ -85,19 +89,16 @@ class Spinner extends React.Component {
       this.startFireworks();
       this.setState({ showMessage: true });
 
-      // New: Trigger reveal page after delay
       setTimeout(() => {
         if (this.audioRef.current) {
           this.fadeAudio(this.audioRef.current, this.audioRef.current.volume, 0, 4500);
           setTimeout(() => {
             this.setState({ showRevealPage: true });
-          }, 4500); // wait for fade out duration before showing reveal page
+          }, 4500);
         } else {
           this.setState({ showRevealPage: true });
         }
       }, 5000);
-      
-
     }, 2100);
   };
 
@@ -108,35 +109,49 @@ class Spinner extends React.Component {
   render() {
     return (
       <div>
-        <div className="spinner-wrapper">
-          <div className="arrow"> </div>
-          <ul className={this.state.name}>
-            <li><div className="separator"></div><div className="text">Aarabhi</div></li>
-            <li><div className="separator"></div><div className="text">Atana</div></li>
-            <li><div className="separator"></div><div className="text">Bilahari</div></li>
-            <li><div className="separator"></div><div className="text">Chaya</div></li>
-            <li><div className="separator"></div><div className="text">Maand</div></li>
-            <li><div className="separator"></div><div className="text">Lahari</div></li>
-            <li><div className="separator"></div><div className="text">Sindhu</div></li>
-            <li><div className="separator"></div><div className="text">Behag</div></li>
-            <li><div className="separator"></div><div className="text">Begade</div></li>
-            <li><div className="separator"></div><div className="text">Kedaram</div></li>
-            <li><div className="separator"></div><div className="text">Kurinji</div></li>
-            <li><div className="separator"></div><div className="text">Pahadi</div></li>
-            <button className='spin-button' onClick={this.startRotation}></button>
-          </ul>
-        </div>
+        {this.state.showCircle && (
+          <motion.div
+            initial={{ opacity: 1 }}
+            animate={{ opacity: this.state.fadingOut ? 0 : 1 }}
+            transition={{ duration: 5 }}
+            onAnimationComplete={() => {
+              if (this.state.fadingOut) {
+                this.setState({ showCircle: false, fadingOut: false });
+              }
+            }}
+            className="spinner-wrapper"
+          >
+            <div className="arrow"> </div>
+            <ul className={this.state.name}>
+              <li><div className="separator"></div><div className="text">Aarabhi</div></li>
+              <li><div className="separator"></div><div className="text">Atana</div></li>
+              <li><div className="separator"></div><div className="text">Bilahari</div></li>
+              <li><div className="separator"></div><div className="text">Chaya</div></li>
+              <li><div className="separator"></div><div className="text">Maand</div></li>
+              <li><div className="separator"></div><div className="text">Lahari</div></li>
+              <li><div className="separator"></div><div className="text">Sindhu</div></li>
+              <li><div className="separator"></div><div className="text">Behag</div></li>
+              <li><div className="separator"></div><div className="text">Begade</div></li>
+              <li><div className="separator"></div><div className="text">Kedaram</div></li>
+              <li><div className="separator"></div><div className="text">Kurinji</div></li>
+              <li><div className="separator"></div><div className="text">Pahadi</div></li>
+              <button className='spin-button' onClick={this.startRotation}></button>
+            </ul>
+          </motion.div>
+        )}
+
+        <div><img className='logo' src={logo} alt="Logo" /></div>
 
         <audio ref={this.audioRef} src="/aarabhi_audio.m4a" />
 
         {this.state.showMessage && (
           <div className="fade-message">
-            {`You've landed on Aarabhi's Website!`.split(" ").map((word, i) => (
+            {`You've landed on Aarabhi's Website!`.split("").map((word, i) => (
               <motion.span
                 key={i}
                 initial={{ opacity: 0, y: 10 }}
                 animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 3.0, delay: i * 0.60 }}
+                transition={{ duration: 0.5, delay: i * 0.1 }}
                 style={{ display: "inline-block", marginRight: "6px" }}
               >
                 {word}
@@ -145,21 +160,11 @@ class Spinner extends React.Component {
           </div>
         )}
 
-        
         {this.state.showRevealPage && (
           <div className="reveal-page">
-            <h2>Welcome</h2>
+            <SkewedScroll />
             <div className="content">
-              {/* {Array.from({ length: 15 }, (_, i) => (
-                // <motion.p
-                //   key={i}
-                //   initial={{ opacity: 0, y: 50 }}
-                //   animate={{ opacity: 1, y: 0 }}
-                //   transition={{ delay: i * 0.2 }}
-                // >
-                //   Hello
-                // </motion.p>
-              ))} */}
+              {/* Optional content */}
             </div>
           </div>
         )}

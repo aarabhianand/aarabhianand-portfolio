@@ -1,0 +1,200 @@
+html, body {
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background: beige;
+    font-family: 'Open Sans', Helvetica, Arial, sans-serif;
+  }
+  
+  .skw-pages {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+  }
+  
+  /* Each page */
+  .skw-page {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100vh;
+    overflow: visible; /* allow skewed edges to show */
+    pointer-events: none; /* prevent interaction on inactive pages */
+  }
+  
+  /* Active page gets pointer events back */
+  .skw-page.active {
+    pointer-events: auto;
+  }
+  
+  /* Halves */
+  .skw-page__half {
+    position: absolute;
+    top: 0;
+    height: 100vh;
+    transition: transform 1s ease;
+    overflow: hidden;
+  }
+  
+  /* Left half start position */
+  .skw-page__half--left {
+    left: 0;
+    width: 51%; /* slightly wider for overlap */
+    transform: translate3d(-32.4vh, 100%, 0);
+    pointer-events: auto;
+  }
+  
+  /* Right half start position */
+  .skw-page__half--right {
+    left: 49%; /* slight overlap */
+    width: 51%;
+    transform: translate3d(32.4vh, -100%, 0);
+    pointer-events: auto;
+  }
+  
+  /* Active page halves: bring to center */
+  .skw-page.active .skw-page__half--left,
+  .skw-page.active .skw-page__half--right {
+    transform: translate3d(0, 0, 0);
+  }
+  
+  /* Skew container inside each half */
+  .skw-page__skewed {
+    overflow: hidden;
+    position: absolute;
+    top: 0;
+    height: 100%;
+    background: beige;
+    transform: skewX(-18deg);
+    pointer-events: none;
+    width: 180%; /* wider for overlap */
+  }
+  
+  .skw-page__half--left .skw-page__skewed {
+    left: -55%; /* shifted more left */
+  }
+  
+  .skw-page__half--right .skw-page__skewed {
+    right: -55%; /* shifted more right */
+  }
+  
+  /* Content inside skew container */
+  .skw-page__content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-flow: column wrap;
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    padding: 0 10%; /* reduced padding */
+    color: black;
+    transform: skewX(18deg);
+    transition: transform 1s ease, opacity 1s ease;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    pointer-events: auto;
+  }
+  
+  /* Left half content origin */
+  .skw-page__half--left .skw-page__content {
+    padding-left: 10%;
+    padding-right: 10%;
+    transform-origin: 100% 0;
+  }
+  
+  /* Right half content origin */
+  .skw-page__half--right .skw-page__content {
+    padding-left: 10%;
+    padding-right: 10%;
+    transform-origin: 0 100%;
+  }
+  
+  /* Inactive page content style */
+  .skw-page.inactive .skw-page__content {
+    opacity: 0.5;
+    transform: skewX(18deg) scale(0.95);
+  }
+  
+  /* Headings and description */
+  .skw-page__heading {
+    font-size: 8px;
+    text-align: center;
+    max-width: 90%;       /* limit width */
+    overflow-wrap: break-word; /* wrap long words */
+    word-wrap: break-word;     /* for compatibility */
+    white-space: normal;       /* allow line breaks */
+    margin: 0 auto;    
+  }
+  
+  .skw-page__description {
+    font-size: 8px;
+    text-align: center;
+    max-width: 90%;       /* limit width */
+    overflow-wrap: break-word; /* wrap long words */
+    word-wrap: break-word;     /* for compatibility */
+    white-space: normal;       /* allow line breaks */
+    margin: 0 auto;  
+            /* center horizontally */
+  }
+  
+  
+  .skw-page__link {
+    color: #FFA0A0;
+    text-decoration: none;
+  }
+  
+  /* Backgrounds for pages */
+  
+  /* Page 1 */
+  .skw-page-1 .skw-page__half--left .skw-page__content {
+    background-image: url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/142996/mousover-img-1.jpg');
+  }
+  
+  .skw-page-1 .skw-page__half--right .skw-page__content {
+    background: beige; /* lighten #1C1C1C by 5% roughly */
+    color:black;
+    font-family: 'Cinzel';
+  }
+  
+  /* Page 2 */
+  .skw-page-2 .skw-page__half--left .skw-page__content {
+    background: #292929;
+  }
+  
+  .skw-page-2 .skw-page__half--right .skw-page__content {
+    background-image: url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/142996/slider-2.jpg');
+  }
+  
+  /* Page 3 */
+  .skw-page-3 .skw-page__half--left .skw-page__content {
+    background-image: url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/142996/mousover-img-2.jpg');
+  }
+  
+  .skw-page-3 .skw-page__half--right .skw-page__content {
+    background: #292929;
+  }
+  
+  /* Page 4 */
+  .skw-page-4 .skw-page__half--left .skw-page__content {
+    background: #292929;
+  }
+  
+  .skw-page-4 .skw-page__half--right .skw-page__content {
+    background-image: url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/142996/sections-3.jpg');
+  }
+  
+  /* Page 5 */
+  .skw-page-5 .skw-page__half--left .skw-page__content {
+    background-image: url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/142996/img-test.jpg');
+  }
+  
+  .skw-page-5 .skw-page__half--right .skw-page__content {
+    background: #292929;
+  }
+  
