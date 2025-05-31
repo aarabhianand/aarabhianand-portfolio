@@ -4,6 +4,7 @@ import confetti from 'canvas-confetti';
 import { motion } from 'framer-motion';
 import SkewedScroll from './SkewSroll';
 import logo from './logo.png';
+//import { useKeys } from "rooks";
 
 class Spinner extends React.Component {
     state = {
@@ -113,9 +114,12 @@ class Spinner extends React.Component {
     this.audioRef.current.volume = 0.3;
   }
 
+
+
   render() {
     return (
       <div>
+        
         {this.state.showCircle && (
           <motion.div
             initial={{ opacity: 1 }}
@@ -155,11 +159,13 @@ class Spinner extends React.Component {
 </div>
 
 
-        <audio ref={this.audioRef} src="/aarabhi_audio.m4a" volume='0.3' />
+
+
+        <audio ref={this.audioRef} src="/AARABHI2.m4a" volume='0.3' />
 
         {this.state.showMessage && (
           <div className="fade-message">
-            {`You've landed on Aarabhi's Website!`.split("").map((word, i) => (
+            {`You've landed on Aarabhi('s Website!)`.split("").map((word, i) => (
               <motion.span
                 key={i}
                 initial={{ opacity: 0, y: 10 }}

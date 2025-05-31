@@ -1,8 +1,9 @@
 //import Rainbow from './Rainbow';
 //import Backgrounds from './Rainbow';
-import Spinner from './Spinner';
+//import Spinner from './Spinner';
 import './App.css';
-import { ReactComponent as DecalCluster } from './assets/clusters1.svg';
+import Alert from './alert';
+//import { ReactComponent as DecalCluster } from './assets/clusters1.svg';
 
 function App() {
   return (
@@ -29,7 +30,7 @@ function App() {
 
 
     // </div>
-    <div> <Spinner /> </div>
+    <div> <Alert/> </div>
     //</div>
   );
 }
