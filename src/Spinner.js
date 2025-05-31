@@ -6,30 +6,30 @@ import SkewedScroll from './SkewSroll';
 import logo from './logo.png';
 
 class Spinner extends React.Component {
-  state = {
-    name: "circle",
-    showMessage: false,
-    showRevealPage: false,
-    showCircle: true,
-    fadingOut: false
-  };
+    state = {
+        name: "circle",
+        showMessage: false,
+        showRevealPage: false,
+        showCircle: true,
+        fadingOut: false,
+        stopFireworks: false  // new
+      };
+      
 
   audioRef = React.createRef();
 
-  startFireworks = (duration = 15000) => {
-    const animationEnd = Date.now() + duration;
-    const colors = [   '#9CAC54','#97CD97','#345C32'];
+  startFireworks = () => {
+    const colors = ['#9CAC54', '#97CD97', '#345C32'];
     const defaults = {
       startVelocity: 30,
       spread: 55,
       ticks: 60,
       zIndex: 999
     };
-
+  
     const frame = () => {
-      const timeLeft = animationEnd - Date.now();
-      if (timeLeft <= 0) return;
-
+      if (this.state.stopFireworks) return;  // stop gracefully
+  
       confetti({
         ...defaults,
         particleCount: 30,
@@ -37,7 +37,7 @@ class Spinner extends React.Component {
         origin: { x: 0 },
         colors: colors
       });
-
+  
       confetti({
         ...defaults,
         particleCount: 30,
@@ -45,13 +45,13 @@ class Spinner extends React.Component {
         origin: { x: 1 },
         colors: colors
       });
-
+  
       requestAnimationFrame(frame);
     };
-
+  
     frame();
   };
-
+  
   fadeAudio = (audioEl, from, to, duration) => {
     if (!audioEl) return;
     const steps = 20;
@@ -75,20 +75,25 @@ class Spinner extends React.Component {
 
   startRotation = () => {
     this.setState({ name: "circle start-rotate" });
-
+  
     setTimeout(() => {
       this.setState({ name: "circle", fadingOut: true });  // trigger fade out
-
+  
       if (this.audioRef.current) {
         const audio = this.audioRef.current;
         audio.volume = 0;
         audio.play();
         this.fadeAudio(audio, 0, 1, 3000);
       }
-
+  
       this.startFireworks();
       this.setState({ showMessage: true });
-
+  
+      // 👇 NEW: Stop fireworks after 5s
+      setTimeout(() => {
+        this.setState({ stopFireworks: true });
+      }, 5000);
+  
       setTimeout(() => {
         if (this.audioRef.current) {
           this.fadeAudio(this.audioRef.current, this.audioRef.current.volume, 0, 4500);
@@ -101,9 +106,11 @@ class Spinner extends React.Component {
       }, 5000);
     }, 2100);
   };
+  
 
   componentDidMount() {
     this.startRotation();
+    this.audioRef.current.volume = 0.3;
   }
 
   render() {
@@ -140,9 +147,15 @@ class Spinner extends React.Component {
           </motion.div>
         )}
 
-        <div><img className='logo' src={logo} alt="Logo" /></div>
+<div className="logo-container">
+  <img className='logo' src={logo} alt="Logo" />
+  <div className="overlay">
+    <div className="image-text">R B</div>
+  </div>
+</div>
 
-        <audio ref={this.audioRef} src="/aarabhi_audio.m4a" />
+
+        <audio ref={this.audioRef} src="/aarabhi_audio.m4a" volume='0.3' />
 
         {this.state.showMessage && (
           <div className="fade-message">
@@ -164,7 +177,7 @@ class Spinner extends React.Component {
           <div className="reveal-page">
             <SkewedScroll />
             <div className="content">
-              {/* Optional content */}
+              
             </div>
           </div>
         )}

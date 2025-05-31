@@ -5,6 +5,8 @@
     background: beige;
     font-family: 'Open Sans', Helvetica, Arial, sans-serif;
   } */
+
+  
   
   .skw-pages {
     position: relative;
@@ -194,14 +196,17 @@ background-position: center;
 
   }
   
+  
   .skw-page-1 .skw-page__half--right .skw-page__content {
     background: linear-gradient(90deg, #e3ffe7 0%, #9cac54 100%);
+    animation: gradientWave 10s ease infinite;
     color: black !important;
     font-family: 'Cinzel', serif;
     font-weight: italic;
     
     
   }
+  
   
   /* Page 2 */
   .skw-page-2 .skw-page__half--left .skw-page__content {
