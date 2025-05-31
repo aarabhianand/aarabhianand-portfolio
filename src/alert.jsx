@@ -20,6 +20,7 @@ function EasterEggModal({ onClose }) {
         maxWidth: 400,
         boxShadow: "0 0 15px rgba(0,0,0,0.3)",
         textAlign: "center",
+        opacity:'0.9'
       }}>
         <p>
           Congratulations! You found an easter egg [my swifitie self couldn't resist using that :D]<br />
