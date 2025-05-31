@@ -142,7 +142,7 @@
   
   /* Headings and description */
   .skw-page__heading {
-    font-size: 55px !important;
+    font-size: 40px !important;
     text-align: left;
     max-width: 90%;
     white-space: normal;
@@ -152,11 +152,17 @@
     padding-left: 30px !important;  
     padding-right:295px !important;    /* push down a bit from the top */
     box-sizing: border-box;
+    font-weight: 200;
+    /* letter-spacing: 0.05em; */
     word-wrap: break-word;
+    /* animation: typing 3s steps(40, end), blink 0.75s step-end infinite; */
     overflow-wrap: break-word;
-    font-style: italic;
+    
+    font-family: 'Courier New',monospace;
     
   }
+
+  
   
   .skw-page__description {
     font-size: 28px !important;
@@ -247,4 +253,6 @@ background-position: center;
   .skw-page-5 .skw-page__half--right .skw-page__content {
     background: #292929;
   }
+
+  
   

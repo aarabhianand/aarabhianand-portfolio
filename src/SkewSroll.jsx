@@ -73,16 +73,20 @@ const SkewedScroll = () => {
               <div className="skw-page__content">
                 {i === 0 && (
                   <>
-                    <h3 className="skw-page__heading">Engineering an aesthetic</h3>
-                    <h3 className="skw-page__heading" >that thinks</h3>
+                  
+                    <h3 className="skw-page__heading">&lt; Engineering an aesthetic</h3>
+                    <h3 className="skw-page__heading" >that thinks /&gt;</h3>
                     <br></br>
-                    <br></br>
-                    <br></br>
+                    
                     <p className="skw-page__description">Hey there! - I'm Aarabhi</p>
                     <p className="skw-page__description">I'm a senior at PES University, studying  Computer<br></br> Science Engineering specialising in 
                     Artificial <br></br> Intelligence and Machine Learning.</p>
-                    <p className="skw-page__description">I'm passionate about front-end development, <br></br>
-                    Database Design and exploring the possibilities <br></br>of Generative AI.
+                    <p className="skw-page__description">I enjoy building front-end experiences that are clean,<br></br> intuitive, and functional. I'm interested 
+                      in how good<br></br> design and smooth interactions improve the way people <br></br>use technology. I also like working with databases, 
+                      <br></br> and 
+                      recently, have been exploring Generative AI, its <br></br>
+                      ability to create new content and tools, and it's usage<br></br>in practical, meaningful ways. <br></br>
+                    
                     </p>
                     <p className="skw-page__description">Continue downward to find out more!</p>
 
