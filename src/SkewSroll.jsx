@@ -77,8 +77,10 @@ const SkewedScroll = () => {
                     <h3 className="skw-page__heading">&lt; Engineering an aesthetic</h3>
                     <h3 className="skw-page__heading" >that thinks /&gt;</h3>
                     <br></br>
-                    
+                    <br></br>
+                    <br></br>
                     <p className="skw-page__description">Hey there! - I'm Aarabhi</p>
+                    
                     <p className="skw-page__description">I'm a senior at PES University, studying  Computer<br></br> Science Engineering specialising in 
                     Artificial <br></br> Intelligence and Machine Learning.</p>
                     <p className="skw-page__description">I enjoy building front-end experiences that are clean,<br></br> intuitive, and functional. I'm interested 
