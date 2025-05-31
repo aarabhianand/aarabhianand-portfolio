@@ -73,8 +73,13 @@ const SkewedScroll = () => {
               <div className="skw-page__content">
                 {i === 0 && (
                   <>
-                    <h2 className="skw-page__heading">Hi! I'm Aarabhi</h2>
-                    <p className="skw-page__description">I'm a senior at PES University, interested in Front-end Development and Design</p>
+                    <h3 className="skw-page__heading">Engineering an aesthetic</h3>
+                    <h3 className="skw-page__heading" >that thinks</h3>
+                    <br></br>
+                    <br></br>
+                    <br></br>
+                    
+                    
                   </>
                 )}
                 {i === 1 && (

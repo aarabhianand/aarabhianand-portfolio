@@ -87,7 +87,7 @@
     {
         width:25em;
         height:25em;
-        border: 5px solid black;
+        border: 5px solid beige;
         position: relative;
         padding: 0;
         margin: 1em auto;
@@ -133,7 +133,7 @@
         height:0;
         border-left: 30px solid transparent;
         border-right: 30px solid transparent;
-        border-top: 60px solid black;
+        border-top: 60px solid beige;
         position: absolute;
         left: 50%;
         top: -20px;
@@ -147,7 +147,7 @@
         transform: translate(-50%, -50%);
         width: 40px;
         height: 40px;
-        background-color: black;
+        background-color: beige;
         border-radius: 40px;
         border: 1px beige solid;
         cursor: pointer;
@@ -182,7 +182,7 @@
         left: 0;
         width: 5px;
         height: 100%;
-        background: black;
+        background: beige;
         z-index: 13;
       }
 

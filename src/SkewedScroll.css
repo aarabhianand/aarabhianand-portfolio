@@ -1,10 +1,10 @@
-html, body {
+/* html, body {
     margin: 0;
     padding: 0;
     overflow: hidden;
     background: beige;
     font-family: 'Open Sans', Helvetica, Arial, sans-serif;
-  }
+  } */
   
   .skw-pages {
     position: relative;
@@ -49,9 +49,10 @@ html, body {
   /* Right half start position */
   .skw-page__half--right {
     left: 49%; /* slight overlap */
-    width: 51%;
+    width: 50%;
     transform: translate3d(32.4vh, -100%, 0);
     pointer-events: auto;
+    overflow: hidden;
   }
   
   /* Active page halves: bring to center */
@@ -77,29 +78,33 @@ html, body {
   }
   
   .skw-page__half--right .skw-page__skewed {
-    right: -55%; /* shifted more right */
+    right: -55%;
+    overflow: hidden; /* shifted more right */
   }
   
   /* Content inside skew container */
   .skw-page__content {
     display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-flow: column wrap;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
     position: absolute;
     left: 0;
     top: 0;
     width: 100%;
     height: 100%;
-    padding: 0 10%; /* reduced padding */
+    padding: 40px 60px;
     color: black;
-    transform: skewX(18deg);
-    transition: transform 1s ease, opacity 1s ease;
+    overflow-y: auto;
     background-position: center center;
     background-repeat: no-repeat;
     background-size: cover;
     pointer-events: auto;
+    /* optional: keep skew if absolutely necessary on a parent container, not here */
+     transform: skewX(18deg);
+    transition: transform 1s ease, opacity 1s ease;
   }
+  
   
   /* Left half content origin */
   .skw-page__half--left .skw-page__content {
@@ -110,10 +115,22 @@ html, body {
   
   /* Right half content origin */
   .skw-page__half--right .skw-page__content {
-    padding-left: 10%;
-    padding-right: 10%;
-    transform-origin: 0 100%;
+    padding-left: 120px !important;  /* push text away from left skew */
+    padding-right: 60px !important;
+    padding-top: 40px !important;
+    padding-bottom: 40px !important;
+    box-sizing: border-box;
+    overflow-wrap: break-word;
+    word-wrap: break-word;
+    white-space: normal;
+    color: black !important;
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
   }
+  
   
   /* Inactive page content style */
   .skw-page.inactive .skw-page__content {
@@ -123,25 +140,42 @@ html, body {
   
   /* Headings and description */
   .skw-page__heading {
-    font-size: 8px;
-    text-align: center;
-    max-width: 90%;       /* limit width */
-    overflow-wrap: break-word; /* wrap long words */
-    word-wrap: break-word;     /* for compatibility */
-    white-space: normal;       /* allow line breaks */
-    margin: 0 auto;    
+    font-size: 55px !important;
+    text-align: left;
+    max-width: 90%;
+    white-space: normal;
+    margin: 0 auto;
+    color: black !important;
+    padding-top: 30px; 
+    padding-left: 30px !important;  
+    padding-right:295px !important;    /* push down a bit from the top */
+    box-sizing: border-box;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    
   }
   
   .skw-page__description {
-    font-size: 8px;
-    text-align: center;
-    max-width: 90%;       /* limit width */
-    overflow-wrap: break-word; /* wrap long words */
-    word-wrap: break-word;     /* for compatibility */
-    white-space: normal;       /* allow line breaks */
-    margin: 0 auto;  
-            /* center horizontally */
+    font-size: 28px !important;
+    text-align: left;
+    max-width: 90%;
+    padding-left: 120px;
+    padding-right: 30px;
+    margin: 20px auto 0 auto;
+    color: black !important;
+    line-height: 1.4;
+    box-sizing: border-box;
+  
+    /* ensure long words or continuous text wrap */
+    overflow-wrap: break-word;
+    word-wrap: break-word;
+    hyphens: auto;
+    white-space: normal;
   }
+  
+  
+  /* Make sure the parent container allows it */
+  
   
   
   .skw-page__link {
@@ -153,13 +187,20 @@ html, body {
   
   /* Page 1 */
   .skw-page-1 .skw-page__half--left .skw-page__content {
-    background-image: url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/142996/mousover-img-1.jpg');
+    background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('./assets/rblinkedinphoto.JPG');
+background-size: 75%;
+background-repeat: no-repeat;
+background-position: center;
+
   }
   
   .skw-page-1 .skw-page__half--right .skw-page__content {
-    background: beige; /* lighten #1C1C1C by 5% roughly */
-    color:black;
-    font-family: 'Cinzel';
+    background: linear-gradient(90deg, #e3ffe7 0%, #9cac54 100%);
+    color: black !important;
+    font-family: 'Cinzel', serif;
+    font-weight: italic;
+    
+    
   }
   
   /* Page 2 */

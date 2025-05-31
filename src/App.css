@@ -1,27 +1,21 @@
-body{
-  /*background: linear-gradient(to right, #f1f2b5, #345C32);*/
+@keyframes gradientWave {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+body {
+  margin: 0;
+  height: 100vh;
   color: black;
-  /*background:beige;*/
-  --s: 112px; /* control the size */
-  --c1:#F5F5DC;
-  --c2:#C0C0A9;
-  
-  /* background: 
-    conic-gradient(from  45deg at 70%,var(--c2) 25%,#0000 0) calc(5*var(--s)/8) var(--s),
-    conic-gradient(from  45deg at 40%,var(--c1) 25%,#0000 0) calc(3*var(--s)/4) var(--s),
-    conic-gradient(from -45deg at 30%,#0000 75%,var(--c2) 0) calc(var(--s)/8) 0,
-    conic-gradient(from -45deg at 60%,var(--c2) 75%,var(--c1) 0);
-    background-size: var(--s) calc(2*var(--s)); */
-    margin: 0;
-    height: 100vh;
 
-    background: linear-gradient(45deg, transparent 49%, #9CAC54 49% 51%, transparent 51%) , linear-gradient(-45deg, transparent 49%, #9CAC54 49% 51%, transparent 51%);
-        background-size: 3em 3em;
-        background-color: #F5F5DC;
-        opacity: 1
-
-  /* background: repeating-linear-gradient(90deg, beige 0px, beige 30px,transparent 30px, transparent 60px),repeating-linear-gradient(0deg, beige 0px, beige) 30px,transparent 30px, transparent 60px),linear-gradient(90deg, #ffffff,#ffffff); */
-    
-
-
+  background: linear-gradient(90deg, #e3ffe7 0%, #9cac54 100%);
+  background-size: 300% 300%; /* makes the gradient area bigger for smoother movement */
+  animation: gradientWave 10s ease infinite;
 }
