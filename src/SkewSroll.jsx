@@ -78,7 +78,16 @@ const SkewedScroll = () => {
                     <br></br>
                     <br></br>
                     <br></br>
-                    
+                    <p className="skw-page__description">Hey there! - I'm Aarabhi</p>
+                    <p className="skw-page__description">I'm a senior at PES University, studying  Computer<br></br> Science Engineering specialising in 
+                    Artificial <br></br> Intelligence and Machine Learning.</p>
+                    <p className="skw-page__description">I'm passionate about front-end development, <br></br>
+                    Database Design and exploring the possibilities <br></br>of Generative AI.
+                    </p>
+                    <p className="skw-page__description">Continue downward to find out more!</p>
+
+
+
                     
                   </>
                 )}

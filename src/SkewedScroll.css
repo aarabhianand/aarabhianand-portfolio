@@ -154,6 +154,7 @@
     box-sizing: border-box;
     word-wrap: break-word;
     overflow-wrap: break-word;
+    font-style: italic;
     
   }
   
@@ -167,6 +168,7 @@
     color: black !important;
     line-height: 1.4;
     box-sizing: border-box;
+    font-style: italic;
   
     /* ensure long words or continuous text wrap */
     overflow-wrap: break-word;
@@ -195,12 +197,14 @@ background-repeat: no-repeat;
 background-position: center;
 
   }
+
   
   
   .skw-page-1 .skw-page__half--right .skw-page__content {
     background: linear-gradient(90deg, #e3ffe7 0%, #9cac54 100%);
     animation: gradientWave 10s ease infinite;
     color: black !important;
+    background-size: 200% 200%;
     font-family: 'Cinzel', serif;
     font-weight: italic;
     
