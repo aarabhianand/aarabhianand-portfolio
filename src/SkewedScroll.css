@@ -110,9 +110,10 @@
   
   /* Left half content origin */
   .skw-page__half--left .skw-page__content {
-    padding-left: 10%;
+    padding-left: 15%;
     padding-right: 10%;
     transform-origin: 100% 0;
+    
   }
   
   /* Right half content origin */
@@ -131,6 +132,7 @@
     flex-direction: column;
     justify-content: flex-start;
     align-items: flex-start;
+    overflow-x: scroll;
   }
   
   
@@ -220,13 +222,24 @@ background-position: center;
   
   /* Page 2 */
   .skw-page-2 .skw-page__half--left .skw-page__content {
-    background: #292929;
+    background: linear-gradient(90deg, #e3ffe7 0%, #9cac54 100%);
+    animation: gradientWave 10s ease infinite;
+    color: black !important;
+    background-size: 200% 200%;
+    font-family: 'Cinzel', serif;
+    font-weight: italic;
   }
   
   .skw-page-2 .skw-page__half--right .skw-page__content {
-    background-image: url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/142996/slider-2.jpg');
+  background: linear-gradient(90deg, #e3ffe7 0%, #9cac54 100%);
+    animation: gradientWave 10s ease infinite;
+    color: black !important;
+    background-size: 200% 200%;
+    font-family: 'Cinzel', serif;
+    font-weight: italic;
+    
+   
   }
-  
   /* Page 3 */
   .skw-page-3 .skw-page__half--left .skw-page__content {
     background-image: url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/142996/mousover-img-2.jpg');
@@ -254,5 +267,67 @@ background-position: center;
     background: #292929;
   }
 
+  .projects-section {
+    display: flex;
+    flex-direction: column;
+    /* align-items: center; */
+    justify-content: center;
+    padding: 40px 20px;
+  }
+  
+  .projects-heading {
+    font-size: 28px;
+    font-weight: 600;
+    margin-bottom: 24px;
+    color: #222;
+  }
+  
+  .project-card {
+    background-color: #ffffff;
+    padding: 24px;
+    border-radius: 12px;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+    max-width: 300px;
+    height:300px;
+    width: 90%;
+    text-align: left;
+    left:500px;
+  }
+  
+  .project-description {
+    font-size: 16px;
+    line-height: 1.6;
+    color: #444;
+  }
+
+  .card {
+    height: 100px;
+    width: 100px;
+    margin: 10px 0; /* vertical spacing */
+   
+    background-color: #fff;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    transition: box-shadow 0.3s ease;
+  }
+  
+  .description-of-project{
+    border:1px solid black;
+  }
+
+  .btn-styled{
+    height:50px;
+    padding-left: 150px;
+    padding-right:150px;
+    background: beige;
+    opacity:0.6;
+    font-family: 'Cinzel';
+    font-size:25px;
+    font-style: italic;
+    border-radius: 5px;
+    color:black;
+  }
+  
+  
   
   

@@ -65,7 +65,14 @@ const SkewedScroll = () => {
         >
           <div className="skw-page__half skw-page__half--left">
             <div className="skw-page__skewed">
-              <div className="skw-page__content">{/* Left side content */}</div>
+              <div className="skw-page__content">
+              {i === 1 && (
+                  <>
+                    
+                    
+                  </>
+                )}
+                </div>
             </div>
           </div>
           <div className="skw-page__half skw-page__half--right">
@@ -78,7 +85,7 @@ const SkewedScroll = () => {
                     <h3 className="skw-page__heading" >that thinks /&gt;</h3>
                     <br></br>
                     <br></br>
-                    <br></br>
+                    
                     <p className="skw-page__description">Hey there! - I'm Aarabhi</p>
                     
                     <p className="skw-page__description">I'm a senior at PES University, studying  Computer<br></br> Science Engineering specialising in 
@@ -90,6 +97,7 @@ const SkewedScroll = () => {
                       ability to create new content and tools, and it's usage<br></br>in practical, meaningful ways. <br></br>
                     
                     </p>
+                    <br></br>
                     <p className="skw-page__description">Continue downward to find out more!</p>
 
 
@@ -99,10 +107,65 @@ const SkewedScroll = () => {
                 )}
                 {i === 1 && (
                   <>
-                    <h2 className="skw-page__heading">Page 2</h2>
-                    <p className="skw-page__description">
-                      Nothing to do here, continue scrolling.
+                    <h2 className="skw-page__heading">Projects & Publications</h2>
+                    {/* <div className="projects-description"> */}
+                    {/* <div class="description-of-project"> */}
+
+                    
+                    <p className="skw-page__description" font-style="bold">
+                      - Few-Shot Learning for Landmarks Classification
+                      <br></br>
+                      Accepted Paper, 5th ICIVC 2025 Dehradun, India. 
+                      <br></br>To be held on June 13–14, 2025.
+
+                      
+                    <br></br>
+                    <br></br>
+                    
+                      
                     </p>
+                    
+                      
+
+                    <p className="skw-page__description" font-style="bold">
+                      - Smart City Public Infrastructure Management System
+                      <br></br>
+                      Technologies: MySQL, React, Node, Express
+
+                      <br></br>
+                      <br></br>
+                      
+                      
+                      
+                    </p>
+
+                    <p className="skw-page__description" font-style="bold">
+                      - Minterest - An NFT Marketplace
+                      <br></br>
+                      Technologies: Solidity, React, Express
+
+                      <br></br>
+                      <br></br>
+                      
+                      
+                      
+                    </p>
+
+                    <p className="skw-page__description" font-style="bold">
+                      - NAI UI/UX Hackathon, Website Re-design Proposal
+                      <br></br>
+                      Technologies: Figma
+
+                      <br></br>
+                      <br></br>
+                      
+                      
+                      <button className="btn-styled">Click here to explore more!</button>
+                    </p>
+                    
+                    {/* </div> */}
+                    
+                    {/* </div> */}
                   </>
                 )}
                 {i === 2 && (
