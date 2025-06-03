@@ -68,7 +68,32 @@ const SkewedScroll = () => {
               <div className="skw-page__content">
               {i === 1 && (
                   <>
+                  <div className="container-images">
+                    <p className="skw-page__description">
+                      <br></br>
+                      <div class="polaroid">
+                    <img className ="image-styled" src="/minterest-image.jpeg" alt="minterest-logo"></img>
+                    <div className="container-images2"></div>
+                    {/* <h2>Minterest</h2> */}
+                    </div>
+                   <br></br>
                     
+                    <div className="polaroid">
+                    
+                    <img className ="image-styled" src="/smart-city.jpeg" alt="smart-city"></img>
+                    </div>
+                    
+                    </p>
+                    </div>
+                    
+                    
+                  </>
+                )}
+                {i === 2 && (
+                  <>
+                  {/* <div className="skw-page__description"> */}
+                  {/* <img className="image-full" src="/DSC_6833-4.jpg" alt="rb-dance"></img> */}
+                  {/* </div> */}
                     
                   </>
                 )}
@@ -107,6 +132,7 @@ const SkewedScroll = () => {
                 )}
                 {i === 1 && (
                   <>
+                  
                     <h2 className="skw-page__heading">Projects & Publications</h2>
                     {/* <div className="projects-description"> */}
                     {/* <div class="description-of-project"> */}
@@ -170,8 +196,26 @@ const SkewedScroll = () => {
                 )}
                 {i === 2 && (
                   <>
-                    <h2 className="skw-page__heading">Page 3</h2>
-                    <p className="skw-page__description">The end is near, I promise!</p>
+                    <h2 className="skw-page__heading">Meet my other side</h2>
+                    <p className="skw-page__description">My creative inclination doesn't stop at website design
+                      <br></br> and developement, but also extends to my hobbies!
+                      <br></br>
+                      <br></br>
+                      I am a B-graded Bharatanatyam artiste, 
+                      certified<br></br>by Doordarshan Bengaluru and 
+                      a dedicated student of <br></br>carnatic music(like my name didn't give that away<br></br>already :D) from the last 18 years
+                      <br></br>
+                      <br></br>
+                      I play the classical violin and am a grade-3 pianist from
+                      <br></br> the Trinity College of Music, London
+                      <br></br>
+                      <br></br>
+                      Outside of my professional work, I enjoy painting and 
+                      <br></br>crocheting, which help me express my creativity in
+                      <br></br> different ways.
+                      
+
+                    </p>
                   </>
                 )}
                 {i === 3 && (

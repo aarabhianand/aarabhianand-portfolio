@@ -6,6 +6,21 @@
     font-family: 'Open Sans', Helvetica, Arial, sans-serif;
   } */
 
+  /* @keyframes bgCycle {
+    0% {
+      background-image: url('./assets/DSC_6833-4.jpg');
+    }
+    33.33% {
+      background-image: url('./assets/DSC_7499.jpg');
+    }
+    66.66% {
+      background-image: url('./assets/DSC_6833-4.jpg');
+    }
+    100% {
+      background-image: url('./assets/DSC_7499.jpg');
+    }
+  } */
+
   
   
   .skw-pages {
@@ -69,7 +84,7 @@
     position: absolute;
     top: 0;
     height: 100%;
-    background: beige;
+    background: transparent;
     transform: skewX(-18deg);
     pointer-events: none;
     width: 180%; /* wider for overlap */
@@ -92,6 +107,7 @@
     justify-content: flex-start;
     position: absolute;
     left: 0;
+    right:0;
     top: 0;
     width: 100%;
     height: 100%;
@@ -110,7 +126,7 @@
   
   /* Left half content origin */
   .skw-page__half--left .skw-page__content {
-    padding-left: 15%;
+    /* padding-left: 15%; */
     padding-right: 10%;
     transform-origin: 100% 0;
     
@@ -199,7 +215,7 @@
   
   /* Page 1 */
   .skw-page-1 .skw-page__half--left .skw-page__content {
-    background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('./assets/rblinkedinphoto.JPG');
+    background-image:  url('./assets/rblinkedinphoto.JPG');
 background-size: 75%;
 background-repeat: no-repeat;
 background-position: center;
@@ -223,6 +239,7 @@ background-position: center;
   /* Page 2 */
   .skw-page-2 .skw-page__half--left .skw-page__content {
     background: linear-gradient(90deg, #e3ffe7 0%, #9cac54 100%);
+    /* opacity:0.4; */
     animation: gradientWave 10s ease infinite;
     color: black !important;
     background-size: 200% 200%;
@@ -242,11 +259,26 @@ background-position: center;
   }
   /* Page 3 */
   .skw-page-3 .skw-page__half--left .skw-page__content {
-    background-image: url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/142996/mousover-img-2.jpg');
+    height:100%;
+    width:65%;
+    background-image: linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.2)),url('./assets/DSC_6833-4.jpg');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    padding-top:400px !important;
+    padding-left:175px;
+    animation: bgCycle 10s infinite;
+    /* flex:1; */
   }
   
+  
   .skw-page-3 .skw-page__half--right .skw-page__content {
-    background: #292929;
+    background: linear-gradient(90deg, #e3ffe7 0%, #9cac54 100%);
+    animation: gradientWave 10s ease infinite;
+    color: black !important;
+    background-size: 200% 200%;
+    font-family: 'Cinzel', serif;
+    font-weight: italic;
   }
   
   /* Page 4 */
@@ -327,6 +359,84 @@ background-position: center;
     border-radius: 5px;
     color:black;
   }
+
+  .skw-page__full {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: linear-gradient(90deg, #e3ffe7 0%, #9cac54 100%);
+    animation: gradientWave 10s ease infinite;
+    color: black;
+    font-family: 'Cinzel', serif;
+    font-weight: 400;
+    padding: 50px;
+    text-align: center;
+  }
+
+  .image-styled{
+    height:295px;
+    width:450px;
+    opacity:1;
+    /* border-radius: 5px; */
+    /* padding-left:100px; */
+  }
+
+  @keyframes fadeInPop {
+    0% {
+      opacity: 0;
+      transform: translateY(30px) scale(0.95);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0) scale(1);
+    }
+  }
+  
+  
+
+  div.polaroid {
+    width: 115.3%;
+    height:330px;
+    background-color: rgba(0,0,0,0.4);
+    color:black;
+    font-family: 'Cinzel';
+    font-style:'italic';
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    animation: fadeInPop 1.0s cubic-bezier(0.25, 0.1, 0.25, 1) forwards;
+
+    opacity: 0; /* start hidden */
+    
+  }
+  .container-images{
+    padding-left: 235px;
+  }
+
+  .container-images2 {
+    text-align: center;
+    padding: 10px 40px;
+  }
+
+  .polaroid:nth-child(1) {
+    animation-delay: 1.0s;
+  }
+  
+  .polaroid:nth-child(2) {
+    animation-delay: 1.4s;
+  }
+
+  .image-full {
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: contain;
+  }
+  
+
+  
+  
+  
+  
+  
   
   
   
