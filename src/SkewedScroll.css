@@ -215,7 +215,7 @@
   
   /* Page 1 */
   .skw-page-1 .skw-page__half--left .skw-page__content {
-    background-image:  url('./assets/rblinkedinphoto.JPG');
+    background-image:  url('./assets/pic.jpg');
 background-size: 75%;
 background-repeat: no-repeat;
 background-position: center;
@@ -225,7 +225,7 @@ background-position: center;
   
   
   .skw-page-1 .skw-page__half--right .skw-page__content {
-    background: linear-gradient(90deg, #e3ffe7 0%, #9cac54 100%);
+    background: linear-gradient(90deg, #cbf5d1 0%, #ffbbbb 100%);
     animation: gradientWave 10s ease infinite;
     color: black !important;
     background-size: 200% 200%;
@@ -238,7 +238,8 @@ background-position: center;
   
   /* Page 2 */
   .skw-page-2 .skw-page__half--left .skw-page__content {
-    background: linear-gradient(90deg, #e3ffe7 0%, #9cac54 100%);
+    background: beige;
+    opacity: 0.9;
     /* opacity:0.4; */
     animation: gradientWave 10s ease infinite;
     color: black !important;
@@ -248,7 +249,7 @@ background-position: center;
   }
   
   .skw-page-2 .skw-page__half--right .skw-page__content {
-  background: linear-gradient(90deg, #e3ffe7 0%, #9cac54 100%);
+    background: linear-gradient(90deg, #cbf5d1 0%, #ffbbbb 100%);
     animation: gradientWave 10s ease infinite;
     color: black !important;
     background-size: 200% 200%;
@@ -261,19 +262,19 @@ background-position: center;
   .skw-page-3 .skw-page__half--left .skw-page__content {
     height:100%;
     width:65%;
-    background-image: linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.2)),url('./assets/DSC_6833-4.jpg');
+    /* background-image: linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.2)),url('./assets/DSC_6833-4.jpg'); */
     background-size: contain;
     background-repeat: no-repeat;
     background-position: center;
     padding-top:400px !important;
     padding-left:175px;
-    animation: bgCycle 10s infinite;
+    /* animation: bgCycle 10s infinite; */
     /* flex:1; */
   }
-  
+
   
   .skw-page-3 .skw-page__half--right .skw-page__content {
-    background: linear-gradient(90deg, #e3ffe7 0%, #9cac54 100%);
+    background: linear-gradient(90deg, #cbf5d1 0%, #ffbbbb 100%);
     animation: gradientWave 10s ease infinite;
     color: black !important;
     background-size: 200% 200%;
@@ -283,11 +284,19 @@ background-position: center;
   
   /* Page 4 */
   .skw-page-4 .skw-page__half--left .skw-page__content {
-    background: #292929;
+    background-image:  url('./assets/bgbeach.jpg');
+background-size: 100%;
+background-repeat: no-repeat;
+background-position: center;
   }
   
   .skw-page-4 .skw-page__half--right .skw-page__content {
-    background-image: url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/142996/sections-3.jpg');
+    background: linear-gradient(90deg, #cbf5d1 0%, #fcbbbb 100%);
+    animation: gradientWave 10s ease infinite !important;
+    color: black !important;
+    background-size: 200% 200%;
+    font-family: 'Cinzel', serif;
+    font-weight: italic;
   }
   
   /* Page 5 */
@@ -430,6 +439,49 @@ background-position: center;
     height: 100% !important;
     object-fit: contain;
   }
+
+  .fade-background-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+    overflow: hidden;
+  }
+  
+  .fade-bg-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    opacity: 0;
+    transition: opacity 1.5s ease-in-out;
+  }
+  
+  .fade-bg-image.active {
+    opacity: 1;
+    z-index: 1;
+  }
+
+  .icon-style {
+    width: 40px;
+    height: 40px;
+    margin: 0 15px;
+    transition: transform 0.3s ease;
+  }
+  
+  .icon-style:hover {
+    transform: scale(1.2);
+  }
+  
+  
+
+  
   
 
   

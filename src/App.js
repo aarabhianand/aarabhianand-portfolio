@@ -1,8 +1,10 @@
 //import Rainbow from './Rainbow';
 //import Backgrounds from './Rainbow';
 //import Spinner from './Spinner';
+import { BrowserRouter, Routes } from 'react-router-dom';
 import './App.css';
 import Alert from './alert';
+import ResumeBot from './ResumeBot';
 //import { ReactComponent as DecalCluster } from './assets/clusters1.svg';
 
 function App() {
@@ -30,7 +32,14 @@ function App() {
 
 
     // </div>
-    <div> <Alert/> </div>
+    <div> 
+      <BrowserRouter>
+      <Alert> 
+      <Routes path="/projects" element={<ResumeBot />} />
+      </Alert>
+      </BrowserRouter>
+      </div>
+
     //</div>
   );
 }

@@ -164,6 +164,7 @@ class Spinner extends React.Component {
         <audio ref={this.audioRef} src="/AARABHI2.m4a" volume='0.3' />
 
         {this.state.showMessage && (
+          // <div className="animated-text-container">
           <div className="fade-message">
             {`You've landed on Aarabhi('s Website!)`.split("").map((word, i) => (
               <motion.span
@@ -177,6 +178,7 @@ class Spinner extends React.Component {
               </motion.span>
             ))}
           </div>
+          // </div>
         )}
 
         {this.state.showRevealPage && (
