@@ -250,16 +250,16 @@ const SkewedScroll = () => {
                       {/* <br/>
                       <br/> */}
                        <img src={linkedinLogo} alt="LinkedIn" className="icon-style" />
-                       <a href="www.linkedin.com/in/aarabhi-a-47514628b" target="blank">LinkedIn</a>
+                       <a href="https://www.linkedin.com/in/aarabhi-a-47514628b/" target="_blank">LinkedIn</a>
                       {/* <img src={linkedinLogo} alt="LinkedIn" className="icon-style" /> */}
                       <br/>
                       <br/>
                       <img src={gmailLogo} alt="Gmail" className="icon-style" />
-                      <a href="mailto:aarabhi.anandh@gmail.com">Email</a>
+                      <a href="mailto:aarabhi.anandh@gmail.com" target="_blank">Email</a>
                       <br/>
                       <br/>
                       <img src={gitLogo} alt="Gmail" className="icon-style" />
-                      <a href="https://github.com/aarabhianand">GitHub</a>
+                      <a href="https://github.com/aarabhianand" target="_blank">GitHub</a>
                     </p>
                   </>
                 )}
