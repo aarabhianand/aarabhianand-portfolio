@@ -11,8 +11,6 @@
 # production
 /build
 
-venv/lib
-
 # misc
 .DS_Store
 .env.local
