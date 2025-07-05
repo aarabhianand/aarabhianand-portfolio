@@ -238,7 +238,7 @@ background-position: center;
   
   /* Page 2 */
   .skw-page-2 .skw-page__half--left .skw-page__content {
-    background: beige;
+    background: blanchedalmond;
     opacity: 0.9;
     /* opacity:0.4; */
     animation: gradientWave 10s ease infinite;
@@ -483,17 +483,19 @@ background-position: center;
 
   .button-dl
   {
-    width:300px;
+    width:250px;
     height:40px;
     margin-left: 175px;
     margin-top:25px;
-    background:beige;
-    opacity:0.7;
+    background:blanchedalmond;
+    opacity:0.6;
     color:black;
-    font-size:large;
+    font-size:x-large;
     border-radius: 5px;
     font-family: Cinzel;
     font-style: italic;
+    border-color: black;
+    border-width: 2px;
   }
   
   

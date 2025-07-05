@@ -262,7 +262,7 @@ const SkewedScroll = () => {
                       <br/>
                       Languages: Python, Java, MySQL, JavaScript, R
                       <br/>
-                      Frameworks: React, Node.js, Express, Flask,
+                      Frameworks: React, Node.js, Express, Flask
                       <br/>
                       Tools & Platforms: Git, Docker, VSCode, Figma
                       <br/>
@@ -283,7 +283,7 @@ const SkewedScroll = () => {
                       <a href="https://github.com/aarabhianand" target="_blank" rel="noreferror">and check out my work on GitHub!</a>
                         <br/>
                         {/* <br/> */}
-                      <button class="button-dl" onClick={handleClickdl}>Click to download my resume!</button>
+                      <button class="button-dl" onClick={handleClickdl}>Download Resume</button>
                     </p>
                   </>
                 )}
