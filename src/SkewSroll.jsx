@@ -4,12 +4,22 @@ import "./SkewedScroll.css";
 import linkedinLogo from './assets/linkedin.png';
 import gmailLogo from './assets/GMAIL.png';
 import gitLogo from './assets/github.png';
+import pdfURL from './assets/AarabhiAnand.pdf';
 
 const backgroundImages = [
   "./assets/DSC_6833-4.jpg",
   "./assets/DSC_7499_1.jpg",
   "./assets/crochet2.jpg",
 ];
+
+function handleClickdl(){
+  const link = document.createElement("a");
+  link.href = pdfURL;
+  link.setAttribute("download","AarabhiAnand.pdf");
+  document.body.appendChild(link);
+  link.click();
+  document.body.removeChild(link);
+}
 
 const SkewedScroll = () => {
   const [curPage, setCurPage] = useState(1);
@@ -243,41 +253,44 @@ const SkewedScroll = () => {
                 )}
                 {i === 3 && (
                   <>
-                    <h2 className="skw-page__heading">Contact</h2>
-                    <p className="skw-page__description">If you'd like to get in touch you can contact me here!
+                    <h2 className="skw-page__heading">Let's Connect!</h2>
+                    <p className="skw-page__description">Whether you’re interested in working together, 
+                      have a  <br/> question, or just want to say hi — I’d 
+                      love to hear from <br/> you! Here’s a glimpse of the 
+                      technologies I have been <br/> working with recently:
+                      <br/> 
+                      <br/>
+                      Languages: Python, Java, MySQL, JavaScript, R
+                      <br/>
+                      Frameworks: React, Node.js, Express, Flask,
+                      <br/>
+                      Tools & Platforms: Git, Docker, VSCode, Figma
                       <br/>
                       <br/>
                       {/* <br/>
                       <br/> */}
                        <img src={linkedinLogo} alt="LinkedIn" className="icon-style" />
-                       <a href="https://www.linkedin.com/in/aarabhi-a-47514628b/" target="_blank">LinkedIn</a>
+                       <a href="https://www.linkedin.com/in/aarabhi-a-47514628b/" target="_blank" rel="noreferror">Find me on LinkedIn</a>
                       {/* <img src={linkedinLogo} alt="LinkedIn" className="icon-style" /> */}
                       <br/>
                       <br/>
                       <img src={gmailLogo} alt="Gmail" className="icon-style" />
-                      <a href="mailto:aarabhi.anandh@gmail.com" target="_blank">Email</a>
+                      <a href="mailto:aarabhi.anandh@gmail.com" target="_blank" rel="noreferror"> OR you can email me too :D</a>
+                      {/* <button class="button-dl">Click to Download my Resume</button> */}
                       <br/>
                       <br/>
                       <img src={gitLogo} alt="Gmail" className="icon-style" />
-                      <a href="https://github.com/aarabhianand" target="_blank">GitHub</a>
+                      <a href="https://github.com/aarabhianand" target="_blank" rel="noreferror">and check out my work on GitHub!</a>
+                        <br/>
+                        {/* <br/> */}
+                      <button class="button-dl" onClick={handleClickdl}>Click to download my resume!</button>
                     </p>
                   </>
                 )}
                 {i === 4 && (
                   <>
-                    <h2 className="skw-page__heading">Epic finale</h2>
-                    <p className="skw-page__description">
-                      Check my other pens and follow me on
-                      <a
-                        className="skw-page__link"
-                        href="https://twitter.com/NikolayTalanov"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                      >
-                        {" "}
-                        Twitter
-                      </a>
-                    </p>
+                    <h2 className="skw-page__heading">Chat with my Resume!</h2>
+                    
                   </>
                 )}
               </div>

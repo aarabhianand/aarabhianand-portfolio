@@ -305,7 +305,9 @@ background-position: center;
   }
   
   .skw-page-5 .skw-page__half--right .skw-page__content {
-    background: #292929;
+    background: linear-gradient(90deg, #cbf5d1 0%, #fcbbbb 100%);
+    animation: gradientWave 10s ease infinite !important;
+    background-size: 200% 200%;
   }
 
   .projects-section {
@@ -477,6 +479,21 @@ background-position: center;
   
   .icon-style:hover {
     transform: scale(1.2);
+  }
+
+  .button-dl
+  {
+    width:300px;
+    height:40px;
+    margin-left: 175px;
+    margin-top:25px;
+    background:beige;
+    opacity:0.7;
+    color:black;
+    font-size:large;
+    border-radius: 5px;
+    font-family: Cinzel;
+    font-style: italic;
   }
   
   
