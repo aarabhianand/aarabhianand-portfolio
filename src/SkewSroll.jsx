@@ -312,7 +312,7 @@ import gmailLogo from "./assets/GMAIL.png";
 import gitLogo from "./assets/github.png";
 import pdfURL from "./assets/AarabhiAnand.pdf";
 import Navbar from "./Navbar";
-import heroImg from "aarabhianand-portfolio/src/bgpicforwebsite.jpeg";
+import heroImg from "../assets/bgpicforwebsite.jpeg";
 
 // import { useEffect } from "react";
 
