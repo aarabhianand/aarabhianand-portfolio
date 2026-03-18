@@ -2,9 +2,14 @@ import React from 'react';
 import './spinner.css';
 import confetti from 'canvas-confetti';
 import { motion } from 'framer-motion';
-import SkewedScroll from './SkewSroll';
+// import SkewedScroll from './SkewSroll';
 import logo from './logo.png';
+import Portfolio from './SkewSroll';
+import Navbar from './Navbar';
 //import { useKeys } from "rooks";
+
+
+
 
 class Spinner extends React.Component {
     state = {
@@ -13,14 +18,17 @@ class Spinner extends React.Component {
         showRevealPage: false,
         showCircle: true,
         fadingOut: false,
-        stopFireworks: false  // new
+        stopFireworks: false,  // new
+        showNavbar: false
       };
-      
+
 
   audioRef = React.createRef();
 
+
+
   startFireworks = () => {
-    const colors = ['#9CAC54', '#97CD97', '#345C32'];
+    const colors = ['#6e90b5', '#f6d992', '#f6b092'];
     const defaults = {
       startVelocity: 30,
       spread: 55,
@@ -52,6 +60,8 @@ class Spinner extends React.Component {
   
     frame();
   };
+
+  
   
   fadeAudio = (audioEl, from, to, duration) => {
     if (!audioEl) return;
@@ -98,9 +108,17 @@ class Spinner extends React.Component {
       setTimeout(() => {
         if (this.audioRef.current) {
           this.fadeAudio(this.audioRef.current, this.audioRef.current.volume, 0, 4500);
+          // setTimeout(() => {
+          //   this.setState({ showRevealPage: true });
+          // }, 4500);
           setTimeout(() => {
-            this.setState({ showRevealPage: true });
-          }, 4500);
+  this.setState({ showRevealPage: true });
+
+  setTimeout(() => {
+    this.setState({ showNavbar: true });
+  }, 800); // after reveal animation
+}, 4500);
+
         } else {
           this.setState({ showRevealPage: true });
         }
@@ -152,7 +170,7 @@ class Spinner extends React.Component {
         )}
 
 <div className="logo-container">
-  <img className='logo' src={logo} alt="Logo" />
+  <img className='spinner-logo' src={logo} alt="Logo" />
   <div className="overlay">
     <div className="image-text">R B</div>
   </div>
@@ -166,7 +184,7 @@ class Spinner extends React.Component {
         {this.state.showMessage && (
           // <div className="animated-text-container">
           <div className="fade-message">
-            {`You've landed on Aarabhi('s Website!)`.split("").map((word, i) => (
+            {`You've   landed   on   Aarabhi('s Website!)`.split("").map((word, i) => (
               <motion.span
                 key={i}
                 initial={{ opacity: 0, y: 10 }}
@@ -183,7 +201,10 @@ class Spinner extends React.Component {
 
         {this.state.showRevealPage && (
           <div className="reveal-page">
-            <SkewedScroll />
+
+            {this.state.showNavbar && <Navbar />}
+
+            <Portfolio />
             <div className="content">
               
             </div>

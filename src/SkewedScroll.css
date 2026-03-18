@@ -19,7 +19,7 @@
     100% {
       background-image: url('./assets/DSC_7499.jpg');
     }
-  } */
+  }
 
   
   
@@ -30,23 +30,23 @@
     overflow: hidden;
   }
   
-  /* Each page */
+
   .skw-page {
     position: absolute;
     left: 0;
     top: 0;
     width: 100%;
     height: 100vh;
-    overflow: visible; /* allow skewed edges to show */
-    pointer-events: none; /* prevent interaction on inactive pages */
+    overflow: visible; 
+    pointer-events: none; 
   }
   
-  /* Active page gets pointer events back */
+
   .skw-page.active {
     pointer-events: auto;
   }
   
-  /* Halves */
+
   .skw-page__half {
     position: absolute;
     top: 0;
@@ -55,30 +55,30 @@
     overflow: hidden;
   }
   
-  /* Left half start position */
+
   .skw-page__half--left {
     left: 0;
-    width: 51%; /* slightly wider for overlap */
+    width: 51%; 
     transform: translate3d(-32.4vh, 100%, 0);
     pointer-events: auto;
   }
   
-  /* Right half start position */
+
   .skw-page__half--right {
-    left: 49%; /* slight overlap */
+    left: 49%; 
     width: 50%;
     transform: translate3d(32.4vh, -100%, 0);
     pointer-events: auto;
     overflow: hidden;
   }
   
-  /* Active page halves: bring to center */
+
   .skw-page.active .skw-page__half--left,
   .skw-page.active .skw-page__half--right {
     transform: translate3d(0, 0, 0);
   }
   
-  /* Skew container inside each half */
+
   .skw-page__skewed {
     overflow: hidden;
     position: absolute;
@@ -87,19 +87,19 @@
     background: transparent;
     transform: skewX(-18deg);
     pointer-events: none;
-    width: 180%; /* wider for overlap */
+    width: 180%; 
   }
   
   .skw-page__half--left .skw-page__skewed {
-    left: -55%; /* shifted more left */
+    left: -55%; 
   }
   
   .skw-page__half--right .skw-page__skewed {
     right: -55%;
-    overflow: hidden; /* shifted more right */
+    overflow: hidden; 
   }
   
-  /* Content inside skew container */
+ 
   .skw-page__content {
     display: flex;
     flex-direction: column;
@@ -118,23 +118,21 @@
     background-repeat: no-repeat;
     background-size: cover;
     pointer-events: auto;
-    /* optional: keep skew if absolutely necessary on a parent container, not here */
      transform: skewX(18deg);
     transition: transform 1s ease, opacity 1s ease;
   }
   
   
-  /* Left half content origin */
+ 
   .skw-page__half--left .skw-page__content {
-    /* padding-left: 15%; */
     padding-right: 10%;
     transform-origin: 100% 0;
     
   }
   
-  /* Right half content origin */
+
   .skw-page__half--right .skw-page__content {
-    padding-left: 120px !important;  /* push text away from left skew */
+    padding-left: 120px !important;  
     padding-right: 60px !important;
     padding-top: 40px !important;
     padding-bottom: 40px !important;
@@ -152,13 +150,13 @@
   }
   
   
-  /* Inactive page content style */
+
   .skw-page.inactive .skw-page__content {
     opacity: 0.5;
     transform: skewX(18deg) scale(0.95);
   }
   
-  /* Headings and description */
+ 
   .skw-page__heading {
     font-size: 40px !important;
     text-align: left;
@@ -168,12 +166,12 @@
     color: black !important;
     padding-top: 30px; 
     padding-left: 30px !important;  
-    padding-right:295px !important;    /* push down a bit from the top */
+    padding-right:295px !important;   
     box-sizing: border-box;
     font-weight: 200;
-    /* letter-spacing: 0.05em; */
+    /* letter-spacing: 0.05em; 
     word-wrap: break-word;
-    /* animation: typing 3s steps(40, end), blink 0.75s step-end infinite; */
+    /* animation: typing 3s steps(40, end), blink 0.75s step-end infinite; 
     overflow-wrap: break-word;
     
     font-family: 'Courier New',monospace;
@@ -194,7 +192,7 @@
     box-sizing: border-box;
     font-style: italic;
   
-    /* ensure long words or continuous text wrap */
+    /* ensure long words or continuous text wrap 
     overflow-wrap: break-word;
     word-wrap: break-word;
     hyphens: auto;
@@ -202,7 +200,7 @@
   }
   
   
-  /* Make sure the parent container allows it */
+  /* Make sure the parent container allows it 
   
   
   
@@ -213,7 +211,7 @@
   
   /* Backgrounds for pages */
   
-  /* Page 1 */
+  /* Page 1 
   .skw-page-1 .skw-page__half--left .skw-page__content {
     background-image:  url('./assets/pic.jpg');
 background-size: 75%;
@@ -236,11 +234,11 @@ background-position: center;
   }
   
   
-  /* Page 2 */
+  /* Page 2 
   .skw-page-2 .skw-page__half--left .skw-page__content {
     background: blanchedalmond;
     opacity: 0.9;
-    /* opacity:0.4; */
+    /* opacity:0.4; 
     animation: gradientWave 10s ease infinite;
     color: black !important;
     background-size: 200% 200%;
@@ -258,18 +256,18 @@ background-position: center;
     
    
   }
-  /* Page 3 */
+  /* Page 3 
   .skw-page-3 .skw-page__half--left .skw-page__content {
     height:100%;
     width:65%;
-    /* background-image: linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.2)),url('./assets/DSC_6833-4.jpg'); */
+    /* background-image: linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.2)),url('./assets/DSC_6833-4.jpg'); 
     background-size: contain;
     background-repeat: no-repeat;
     background-position: center;
     padding-top:400px !important;
     padding-left:175px;
     /* animation: bgCycle 10s infinite; */
-    /* flex:1; */
+    /* flex:1; 
   }
 
   
@@ -282,7 +280,7 @@ background-position: center;
     font-weight: italic;
   }
   
-  /* Page 4 */
+  /* Page 4 
   .skw-page-4 .skw-page__half--left .skw-page__content {
     background-image:  url('./assets/bgbeach.jpg');
 background-size: 100%;
@@ -298,8 +296,8 @@ background-position: center;
     font-family: 'Cinzel', serif;
     font-weight: italic;
   }
-  
-  /* Page 5 */
+  /*  */
+  /* Page 5 
   .skw-page-5 .skw-page__half--left .skw-page__content {
     background-image: url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/142996/img-test.jpg');
   }
@@ -313,7 +311,7 @@ background-position: center;
   .projects-section {
     display: flex;
     flex-direction: column;
-    /* align-items: center; */
+    /* align-items: center; 
     justify-content: center;
     padding: 40px 20px;
   }
@@ -346,7 +344,7 @@ background-position: center;
   .card {
     height: 100px;
     width: 100px;
-    margin: 10px 0; /* vertical spacing */
+    margin: 10px 0; /* vertical spacing 
    
     background-color: #fff;
     border-radius: 12px;
@@ -390,7 +388,7 @@ background-position: center;
     width:450px;
     opacity:1;
     /* border-radius: 5px; */
-    /* padding-left:100px; */
+    /* padding-left:100px; 
   }
 
   @keyframes fadeInPop {
@@ -416,7 +414,7 @@ background-position: center;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
     animation: fadeInPop 1.0s cubic-bezier(0.25, 0.1, 0.25, 1) forwards;
 
-    opacity: 0; /* start hidden */
+    opacity: 0; /* start hidden 
     
   }
   .container-images{
@@ -488,7 +486,7 @@ background-position: center;
     margin-left: 175px;
     margin-top:25px;
     background:blanchedalmond;
-    opacity:0.6;
+    opacity:0.7;
     color:black;
     font-size:x-large;
     border-radius: 5px;
@@ -496,7 +494,433 @@ background-position: center;
     font-style: italic;
     border-color: black;
     border-width: 2px;
+  } */
+
+ 
+/* RESET */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* BODY */
+
+body {
+  font-family: Arial, sans-serif;
+  overflow-x: hidden;
+}
+
+/* MAIN CONTAINER */
+
+.portfolio {
+  width: 100%;
+}
+
+/* SECTIONS */
+
+.section {
+  min-height: 100vh;
+  padding: 100px 12%;
+}
+
+/* HEADINGS */
+
+.section h1 {
+  font-size: 56px;
+  margin-bottom: 30px;
+}
+
+.section h2 {
+  font-size: 40px;
+  margin-bottom: 30px;
+}
+
+.section h3 {
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+/* TEXT */
+
+.section p {
+  font-size: 18px;
+  line-height: 1.7;
+  margin-bottom: 16px;
+  max-width: 800px;
+}
+
+/* HERO */
+
+/* .hero {
+  /* background: linear-gradient(90deg, #e3ffe7 0%, #9cac54 100%); 
+  background-image: url("/Users/anand/Desktop/Portfolio/aarabhianand-portfolio/src/bgpicforwebsite.jpeg");
+  /* animation: gradientWave 10s ease infinite; 
+  background-size: contain;
+  font-family: 'Courier', serif;
+  font-style: italic;
+  color: black;
+  text-align: center;
+} */
+
+.hero {
+  background: black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-top: 100px;
+}
+
+.hero-wrapper {
+  width: 90%;
+  max-width: 1400px;
+}
+
+.hero-image {
+  height: 80vh;
+
+  background-image: url("./bgpicforwebsite.jpeg");
+  background-size: cover;
+  background-position: center;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  color: white;
+}
+
+
+
+
+.intro {
+  font-size: 22px;
+  margin-bottom: 20px;
+  color:black !important;
+  text-align: center !important;
+  font-style: normal;
+}
+
+.hero-content {
+  max-width: 750px;
+  margin: 0 auto;
+}
+
+
+/* .type-me {
+  white-space: nowrap;
+  overflow: hidden;
+  width: 0;
+} */
+
+
+/* PROJECTS */
+
+.projects {
+ background: linear-gradient(90deg, #e3ffe7 0%, #9cac54 100%);
+animation: gradientWave 10s ease infinite;
+color: black;
+}
+
+.project {
+  margin-bottom: 25px;
+}
+
+/* HOBBIES */
+
+.hobbies {
+  background: linear-gradient(90deg, #e3ffe7 0%, #9cac54 100%);
+  animation: gradientWave 10s ease infinite;
+  color: #222;
+}
+
+/* CONTACT */
+
+.contact {
+  background: linear-gradient(90deg, #e3ffe7 0%, #9cac54 100%);
+  animation: gradientWave 10s ease infinite;
+  color: white;
+}
+
+.tech {
+  margin: 20px 0;
+}
+
+/* LINKS */
+
+.links {
+  margin-top: 25px;
+}
+
+.link {
+  display: flex;
+  align-items: center;
+  margin-bottom: 12px;
+}
+
+.link img {
+  width: 26px;
+  margin-right: 10px;
+}
+
+.link a {
+  color: white;
+  text-decoration: none;
+  font-size: 17px;
+}
+
+.link a:hover {
+  text-decoration: underline;
+}
+
+/* BUTTON */
+
+.btn {
+  margin-top: 25px;
+  padding: 12px 24px;
+  border: none;
+  background: white;
+  color: black;
+  font-size: 16px;
+  cursor: pointer;
+  border-radius: 6px;
+  width: fit-content;
+}
+
+.btn:hover {
+  background: #ddd;
+}
+
+/* SMOOTH SCROLL */
+
+html {
+  scroll-behavior: smooth;
+}
+
+.type-me {
+  display: inline-block;   /* keeps alignment with your centered hero */
+  white-space: nowrap;     /* prevents wrapping during typing */
+  overflow: hidden;        /* hides unrevealed text */
+  width: 0;                /* GSAP will animate this */
+}
+
+/* ================= HERO GLASS CARD (SCOPED) ================= */
+
+.portfolio-hero {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+
+  /* background: linear-gradient(135deg, #0a192f, #112240, #1b3a6b); */
+  background: linear-gradient(90deg, #CEC8B0 0%, #ADBFB3 100%);
+  background-size: 300% 300%; /* makes the gradient area bigger for smoother movement */
+  animation: gradientWave 10s ease infinite;
+}
+
+/* CARD */
+.portfolio-card {
+  position: relative;
+  width: 85vmin;
+  height: 65vmin;
+
+  border-radius: 10px;
+  overflow: hidden;
+
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(25px);
+
+  border: 7px solid rgba(255, 255, 255);
+
+  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.5);
+}
+
+.portfolio-overlay {
+  position: relative;
+  display: flex;
+
+  width: 100%;
+  height: 100%;
+
+  padding: 1rem 0.75rem;
+
+  background: rgba(246, 176, 146, 0.6); /* glass effect */
+  backdrop-filter: blur(12px);
+
+  transition: 0.4s ease-in-out;
+  z-index: 2;
+}
+
+
+
+/* LEFT CONTENT */
+.portfolio-overlay-content {
+  z-index: 10;
+  padding: 2rem;
+  width: 20%;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.portfolio-overlay-content h1 {
+  color: #f8edeb;
+  font-family: 'Courier', serif;
+  font-style: bold;
+  font-size: 2rem;
+}
+
+.portfolio-subtext {
+  color: #f6d992;
+}
+
+/* .portfolio-image {
+  position: absolute;
+  top: 0;
+  right: 0;
+
+  width: 100%;
+  height: 100%;
+
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  z-index: 1; /* LOWEST → always visible */
+
+  .portfolio-image {
+  position: absolute;
+  top: 0;
+  right: 0; /* 🔥 stays on RIGHT */
+
+  width: 60vmin;  /* 🔥 EXACT template value */
+  height: 100%;
+
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  transition: 0.3s ease-in-out;
+  z-index: 1;
+}
+
+
+
+/* DOTS */
+.portfolio-dots {
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
+
+  display: flex;
+  gap: 10px;
+  z-index: 10;
+}
+
+.portfolio-dots div {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: #f6d992;
+}
+
+/* TEXT PANEL */
+/* .portfolio-text {
+  position: absolute;
+  top: 0;
+  right: 0;
+
+  width: 60%;
+  height: 100%;
+
+  padding: 3rem;
+
+  background: rgba(255, 255, 255, 0.95);
+
+  z-index: 20; /* 🔥 HIGHEST → fixes invisibility */
+  /* overflow-y: auto;
+} */ 
+
+/* .portfolio-text {
+  position: absolute;
+  top: 0;
+  right: 0;
+
+  width: 60%;
+  height: 100%;
+
+  padding: 3rem;
+
+  background: rgba(255, 255, 255, 0.95);
+
+  transform: translateX(100%); /* 🔥 hidden initially */
+
+  /* z-index: 3;
+  transition: 0.5s ease;
+} */ 
+
+.portfolio-text {
+  position: absolute;
+  top: 0;
+  right: 0;
+
+  width: 60vmin; /* 🔥 SAME as image */
+  height: 100%;
+
+  padding: 3rem;
+
+  background: #6e90b5;
+  backdrop-filter: blur(15px);
+
+  z-index: 0; /* 🔥 BELOW overlay initially */
+  overflow-y: auto;
+}
+
+
+
+.portfolio-text p {
+  color: #f8edeb ;
+  font-family: 'Courier', serif;
+  font-style: bold;
+  font-size: 1rem;
+  margin-bottom: 1.2rem;
+}
+
+.portfolio-card:hover .portfolio-overlay {
+  transform: translateX(-60vmin); /* 🔥 slides left */
+}
+
+.portfolio-card:hover .portfolio-image {
+  width: 30vmin; /* 🔥 shrinks on right */
+}
+
+
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+  .portfolio-card {
+    width: 90%;
+    height: auto;
   }
+
+  .portfolio-text,
+  .portfolio-image {
+    position: relative;
+    width: 100%;
+  }
+
+  .portfolio-card:hover .portfolio-overlay {
+    transform: none;
+  }
+}
+
+
+
+
+
+  
   
   
 
@@ -511,4 +935,4 @@ background-position: center;
   
   
   
-  
+   

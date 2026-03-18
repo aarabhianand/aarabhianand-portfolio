@@ -1,50 +1,50 @@
     li:nth-child(1) .text{
-    background-color: #345c32;
+    background-color: #f8d992;
     z-index: 12;
 }
     li:nth-child(2) .text {
-        background-color: #9CAC54;
+        background-color: #f6b092;
         z-index: 11;
     }
 
     li:nth-child(3) .text {
-        background-color: #A7F0DD;
+        background-color: #EAE3CE;
         z-index: 10;
     }
     li:nth-child(4) .text {
-        background-color: #97CD97;
+        background-color: #ADBFB3;
         z-index: 9;
     }
     li:nth-child(5) .text {
-        background-color: #345c32;
+        background-color: #f6d992;
         z-index: 8;
     }
     li:nth-child(6) .text {
-        background-color: #9CAC54;
+        background-color: #f6b092;
         z-index: 7;
     }
     li:nth-child(7) .text {
-        background-color: #A7F0DD;
+        background-color: #EAE3CE;
         z-index: 6;
     }
     li:nth-child(8) .text {
-        background-color: #97CD97;
+        background-color: #ADBFB3;
         z-index:5;
     }
     li:nth-child(9) .text {
-        background-color: #345c32;
+        background-color: #f6d992;
         z-index:4;
     }
     li:nth-child(10) .text {
-        background-color: #9CAC54;
+        background-color: #f6b092;
         z-index: 3;
     }
     li:nth-child(11) .text {
-        background-color: #A7F0DD;
+        background-color: #EAE3CE;
         z-index:2
     }
     li:nth-child(12) .text {
-        background-color: #97CD97;
+        background-color: #ADBFB3;
         z-index:1;
     }
     li:first-child {
@@ -87,7 +87,7 @@
     {
         width:25em;
         height:25em;
-        border: 5px solid beige;
+        border: 5px solid black;
         position: relative;
         padding: 0;
         margin: 1em auto;
@@ -97,7 +97,7 @@
 
 
     }
-    li {
+    .circle li {
         overflow:hidden;
         position: absolute;
         top: 0;
@@ -117,7 +117,7 @@
         height: 200%;
         text-align: center;
         display: block;
-        color:white;
+        color:black;
         transform: skewY(60deg) rotate(15deg);
         padding-top: 20px;
         cursor: pointer;
@@ -133,7 +133,7 @@
         height:0;
         border-left: 30px solid transparent;
         border-right: 30px solid transparent;
-        border-top: 60px solid beige;
+        border-top: 60px solid black;
         position: absolute;
         left: 50%;
         top: -20px;
@@ -147,11 +147,11 @@
         transform: translate(-50%, -50%);
         width: 40px;
         height: 40px;
-        background-color: beige;
+        background-color: black;
         border-radius: 40px;
-        border: 1px beige solid;
+        border: 1px black solid;
         cursor: pointer;
-        color: white;
+        color: black;
         outline:none;
         font-size: 18px;
         z-index: 20;
@@ -239,7 +239,7 @@ canvas {
 
   
 
-  /* Page reveal animation container */
+  /* Page reveal animation container
 .page-reveal {
     position: fixed;
     top: 0;
@@ -347,7 +347,127 @@ canvas {
     left: 50%;
     transform: translate(-50%, -50%);
     -ms-transform: translate(-50%, -50%);
+  } */
+
+  /* PAGE REVEAL ANIMATION */
+
+.page-reveal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 100%;
+  background-color: #000;
+  z-index: 9999;
+  transform: scale(1, 1);
+  animation: pageRevealAnim 1s ease-in-out forwards;
+}
+
+/* MAIN PAGE WRAPPER */
+
+.reveal-page {
+  position: relative;          /* allow page to grow */
+  width: 100%;
+  min-height: 100vh;           /* allow scrolling */
+  background-color: black;
+  z-index: 10000;
+  animation: revealAnim 2s ease-in-out forwards;
+}
+
+/* REVEAL ANIMATION */
+
+@keyframes revealAnim {
+  0% {
+    transform: scale(1, 0.005);
   }
+  50% {
+    transform: scale(1, 0.005);
+  }
+  100% {
+    transform: scale(1, 1);
+  }
+}
+
+/* TEXT STYLES */
+
+/* .reveal-page h2 {
+  color: white;
+  font-size: 5rem;
+  margin-bottom: 2rem;
+}
+
+.reveal-page p {
+  font-size: 4rem;
+  color: white;
+  margin: 0.5rem 0;
+} */
+
+/* CONTENT WRAPPER */
+
+.reveal-page .content {
+  text-align: center;
+}
+
+/* LOGO */
+
+.spinner-logo {
+  height: 8%;
+  width: 8%;
+  opacity: 0.5;
+
+  position: fixed;
+  bottom: 10px;
+  left: 25px;
+
+  object-fit: contain;
+}
+
+.logo-container {
+  height: 8%;
+  width: 8%;
+  opacity: 0.5;
+
+  position: fixed;
+  bottom: 10px;
+  left: 25px;
+
+  object-fit: contain;
+}
+
+/* LOGO HOVER */
+
+.overlay {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+
+  height: 100%;
+  width: 100%;
+
+  opacity: 0;
+  transition: 0.5s ease;
+
+  background-color: transparent;
+}
+
+.logo-container:hover .overlay {
+  opacity: 1;
+}
+
+.image-text {
+  color: black;
+  font-size: 20px;
+
+  position: absolute;
+  top: 50%;
+  left: 50%;
+
+  transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+}
+
 
   /* .animated-text-container{
     width:320px;

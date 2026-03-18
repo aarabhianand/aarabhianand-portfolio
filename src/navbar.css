@@ -1,0 +1,57 @@
+.navbar {
+  background: black;
+  color: white;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  padding: 20px 80px;
+
+  position: fixed;   /* keeps navbar visible */
+  top: 0;
+  left: 0;
+  width: 100%;
+
+  z-index: 20000;     /* ensures it stays above hero */
+
+  transform: none !important;
+}
+
+.navbar-logo{
+color: white;
+font-size: 14px;
+letter-spacing: 2px;
+}
+
+
+
+.nav-links {
+  display: flex;            /* makes items horizontal */
+  flex-direction: row;      /* ensures row layout */
+  align-items: center;
+
+  list-style: none;
+  gap: 40px;
+
+  margin: 0;
+  padding: 0;
+
+  transform: none !important;
+}
+
+/* NAV ITEMS */
+
+.nav-links li {
+  display: inline-block;    /* prevents stacking */
+  color: white;
+  font-size: 14px;
+  letter-spacing: 2px;
+  cursor: pointer;
+
+  transform: none !important;
+}
+
+.nav-links li:hover {
+  color: #ACC8E5   /* your hover color */
+}
